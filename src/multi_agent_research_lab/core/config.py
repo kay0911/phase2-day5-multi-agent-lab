@@ -20,8 +20,16 @@ class Settings(BaseSettings):
     openai_api_key: str | None = Field(default=None, validation_alias="OPENAI_API_KEY")
     openai_model: str = Field(default="gpt-4o-mini", validation_alias="OPENAI_MODEL")
 
+    gemini_api_key: str | None = Field(default=None, validation_alias="GEMINI_API_KEY")
+    gemini_model: str = Field(default="gemini-3.1-flash-lite", validation_alias="GEMINI_MODEL")
+    gemini_base_url: str = Field(default="https://generativelanguage.googleapis.com/v1beta/openai/", validation_alias="GEMINI_BASE_URL")
+
     langsmith_api_key: str | None = Field(default=None, validation_alias="LANGSMITH_API_KEY")
     langsmith_project: str = Field(default="multi-agent-research-lab", validation_alias="LANGSMITH_PROJECT")
+
+    langfuse_secret_key: str | None = Field(default=None, validation_alias="LANGFUSE_SECRET_KEY")
+    langfuse_public_key: str | None = Field(default=None, validation_alias="LANGFUSE_PUBLIC_KEY")
+    langfuse_host: str | None = Field(default="https://cloud.langfuse.com", validation_alias="LANGFUSE_HOST")
 
     tavily_api_key: str | None = Field(default=None, validation_alias="TAVILY_API_KEY")
 
